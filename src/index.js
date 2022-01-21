@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import reducer from './reducers'
 import middleware from './middleware'
+import './index.scss'
 
 const store = createStore(reducer, middleware)
 
