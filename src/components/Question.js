@@ -29,7 +29,7 @@ class Question extends Component {
             <p className='mb-4'>
               { optionOne.text }...
             </p>
-            <Link to={`/poll/${id}`} className='bg-black block text-center w-full text-white font-bold py-2 px-4 rounded text-xs'>
+            <Link to={`/questions/${id}`} className='bg-black block text-center w-full text-white font-bold py-2 px-4 rounded text-xs'>
               View Poll
             </Link>
           </div>
