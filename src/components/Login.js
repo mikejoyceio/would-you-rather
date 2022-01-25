@@ -8,7 +8,6 @@ class Login extends Component {
   }
 
   handleSelectUser = (e) => {
-    const { dispatch } = this.props
     const id = e.target.value
 
     this.setState(() => ({
