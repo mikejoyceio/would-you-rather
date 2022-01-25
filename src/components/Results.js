@@ -11,9 +11,9 @@ class Results extends Component {
     const totalVotes = optionOne.votes.length + optionTwo.votes.length
 
     return (
-      <div className='grid'>
+      <div className='grid border border-gray-200 rounded py-4 px-5'>
         <div>
-          <h6 className='text-lg font-bold'>
+          <h6 className='text-lg font-bold mb-5'>
             Asked by {author.name}
           </h6>
         </div>
@@ -22,7 +22,7 @@ class Results extends Component {
             <Image className='w-20 rounded-full' image={author.avatar} />
           </div>
           <div className='col-span-8'>
-            <p className='font-bold'>Results</p>
+            <p className='font-bold mb-4'>Results</p>
             <Result
               option={optionOne}
               totalVotes={totalVotes}

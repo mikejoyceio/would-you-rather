@@ -9,9 +9,9 @@ class Question extends Component {
     const { id, optionOne } = question
 
     return (
-      <div className='grid'>
+      <div className='grid border border-gray-200 rounded py-4 px-5 mb-5'>
         <div>
-          <h6 className='text-lg font-bold'>
+          <h6 className='text-lg font-bold mb-5'>
             { author.name } asks:
           </h6>
         </div>
@@ -20,9 +20,9 @@ class Question extends Component {
             <Image className='w-20 rounded-full' image={author.avatar} />
           </div>
           <div className='col-span-8'>
-            Would you rather
-            <p>
-              { optionOne.text }
+            <p className='font-bold mb-2'>Would you rather</p>
+            <p className='mb-4'>
+              { optionOne.text }...
             </p>
             <Link to={`/poll/${id}`} className='bg-black block text-center w-full text-white font-bold py-2 px-4 rounded text-xs'>
               View Poll

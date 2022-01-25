@@ -41,9 +41,9 @@ class Vote extends Component {
     const { optionOne, optionTwo } = question
 
     return (
-      <div className='grid'>
+      <div className='grid border border-gray-200 rounded py-4 px-5'>
         <div>
-          <h6 className='text-lg font-bold'>
+          <h6 className='text-lg font-bold mb-5'>
             {author.name} asks:
           </h6>
         </div>
@@ -52,7 +52,7 @@ class Vote extends Component {
             <Image className='w-20 rounded-full' image={author.avatar} />
           </div>
           <div className='col-span-8'>
-            <p>Would you rather...</p>
+            <p className='font-bold mb-4'>Would you rather...</p>
             <form onSubmit={this.handleSubmit}>
               <label className='flex gap-2 items-center mb-2'>
                 <input
@@ -79,7 +79,7 @@ class Vote extends Component {
               </label>
               <button
                 type='submit'
-                className='bg-black w-full text-white font-bold py-2 px-4 rounded'
+                className='bg-black w-full text-white font-bold py-2 px-4 mt-4 rounded'
                 disabled={answer === null}
               >
                 Submit

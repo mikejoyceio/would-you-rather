@@ -41,27 +41,27 @@ class NewQuestion extends Component {
     }
 
     return (
-      <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col w-96 mx-auto border'>
+      <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col w-96 mx-auto border text-center'>
         <div className='mb-4'>
-          <h2 className='font-bold text-center'>Create New Question</h2>
+          <h2 className='font-bold'>Create New Question</h2>
         </div>
-        <p>Would you rather...</p>
+        <p className='mb-5 text-gray-800'>Would you rather...</p>
         <form onSubmit={this.handleSubmit}>
           <div className='mb-6'>
             <input
               type='text'
-              className='border w-full'
+              className='w-full border border-gray-200 rounded p-2'
               name='questionOne'
               onChange={this.handleChange}
             />
           </div>
           <div className='mb-6'>
-            <p>OR</p>
+            <p className='text-gray-800'>OR</p>
           </div>
           <div className='mb-6'>
             <input
               type='text'
-              className='border w-full'
+              className='w-full border border-gray-200 rounded p-2'
               name='questionTwo'
               onChange={this.handleChange}
             />

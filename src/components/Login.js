@@ -4,7 +4,7 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
   state = {
-    id: null
+    id: ''
   }
 
   handleSelectUser = (e) => {
@@ -25,7 +25,7 @@ class Login extends Component {
     dispatch(setAuthedUser(id))
 
     this.setState(() => ({
-      id: null
+      id: ''
     }))
   }
 
@@ -36,16 +36,19 @@ class Login extends Component {
     return (
       <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col w-96 mx-auto border'>
         <div className='mb-4'>
-          <h2 className='font-bold text-center'>Would You Rather</h2>
+          <h1 className='font-bold text-center'>Would You Rather</h1>
+        </div>
+        <div className='my-10'>
+          <p className='font-bold text-2xl uppercase text-center'>Sign In</p>
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className='mb-6'>
             <select
-              className='w-full'
+              className='w-full border border-gray-200 rounded p-2'
               placeholder='Select User'
               onChange={(e) => this.handleSelectUser(e)}
             >
-              <option>Select User</option>
+              <option value=''>Select User</option>
               {userIds.map((id) => (
                 <option value={id} key={id}>{users[id].name}</option>
               ))}
@@ -55,7 +58,7 @@ class Login extends Component {
             <button
               type='submit'
               className='bg-black w-full text-white font-bold py-2 px-4 rounded'
-              disabled={id === null}
+              disabled={id === ''}
             >
               Sign In
             </button>

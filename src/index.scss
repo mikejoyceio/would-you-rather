@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-a.active {
-  @apply text-sky-700
+a {
+  @apply font-bold;
+
+  &.active {
+    @apply text-blue-400;
+  }
 }
 
 button[disabled] {
@@ -13,11 +17,9 @@ button[disabled] {
 }
 
 .react-tabs {
-  @apply mt-20;
   -webkit-tap-highlight-color: transparent;
 
   &__tab-list {
-    border-bottom: 1px solid #aaa;
     padding: 0;
   }
 
@@ -34,9 +36,12 @@ button[disabled] {
     text-align: center;
 
     &--selected {
+      @apply
+        border-gray-200
+        text-blue-400
+        font-bold;
+
       background: #fff;
-      border-color: #aaa;
-      color: black;
       border-radius: 5px 5px 0 0;
     }
 
@@ -70,6 +75,40 @@ button[disabled] {
 
     &--selected {
       display: block;
+    }
+  }
+}
+
+.result {
+  $this: &;
+  position: relative;
+
+  &__your-vote {
+    @apply hidden;
+  }
+
+  &--selected {
+    @apply
+      border-2
+      border-blue-400;
+
+    #{$this}__your-vote {
+      @apply
+        flex
+        items-center
+        absolute
+        -top-4
+        -right-4
+        rounded-full
+        bg-yellow-300
+        text-gray-800
+        font-semibold
+        text-xs
+        h-10
+        w-10
+        text-center
+        leading-none
+        z-30;
     }
   }
 }
