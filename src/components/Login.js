@@ -1,3 +1,7 @@
+/**
+ * @file Login component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
@@ -68,6 +72,10 @@ class Login extends Component {
   }
 }
 
+/**
+ * @param {object} state - Redux state
+ * @param {object} state.users - user objects
+ */
 function mapStateToProps({ users }) {
   return {
     users,
@@ -75,4 +83,7 @@ function mapStateToProps({ users }) {
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(Login)

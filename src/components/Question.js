@@ -1,3 +1,7 @@
+/**
+ * @file Question component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -35,6 +39,13 @@ class Question extends Component {
   }
 }
 
+/**
+ * @param {object} state - Redux state
+ * @param {object} state.users - user objects
+ * @param {object} state.questions - question objects
+ * @param {object} props - props passed in to the component
+ * @param {number} props.id - question id
+ */
 function mapStateToProps({ users, questions }, { id }) {
   const question = questions[id]
   const author = users[question.author]
@@ -45,4 +56,7 @@ function mapStateToProps({ users, questions }, { id }) {
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(Question)

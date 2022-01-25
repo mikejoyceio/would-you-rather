@@ -1,3 +1,7 @@
+/**
+ * @file shared actions
+ */
+
 import { getInitialData } from '../utils/api'
 import { receiveUsers } from './users'
 import { receiveQuestions } from './questions'
@@ -6,6 +10,9 @@ import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 const AUTHED_ID = null
 
+/**
+ * Fetches and sets intial data for the application
+ */
 export function handleInitialData() {
   return (dispatch) => {
     dispatch(showLoading())

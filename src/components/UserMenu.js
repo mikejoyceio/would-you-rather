@@ -1,3 +1,7 @@
+/**
+ * @file UserMenu component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
@@ -43,6 +47,11 @@ class UserMenu extends Component {
   }
 }
 
+/**
+ * @param {object} state - Redux state
+ * @param {string} state.authedUser - authenticated user id
+ * @param {object} state.users - user objects
+ */
 function mapStateToProps({ authedUser, users }) {
   const user = users[authedUser]
 
@@ -52,4 +61,7 @@ function mapStateToProps({ authedUser, users }) {
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(UserMenu)

@@ -1,3 +1,7 @@
+/**
+ * @file Poll component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
@@ -23,7 +27,14 @@ class Poll extends Component {
   }
 }
 
-function mapStateToProps ({ users, authedUser, questions }, props) {
+ /**
+  * @param {object} state - Redux state
+  * @param {string} state.authedUser - authenticated user id
+  * @param {object} state.questions - question objects
+  * @param {object} state.users - user objects
+  * @param {object} props - props passed into the component
+  */
+function mapStateToProps ({ authedUser, questions, users }, props) {
   const { id } = props.match.params
   const answered = Object.keys(users[authedUser].answers)
     .includes(id)
@@ -36,4 +47,7 @@ function mapStateToProps ({ users, authedUser, questions }, props) {
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(Poll)

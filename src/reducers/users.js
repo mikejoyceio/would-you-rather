@@ -1,6 +1,14 @@
+/**
+ * @file users reducer
+ */
+
 import { RECEIVE_USERS } from '../actions/users'
 import { ADD_QUESTION, ADD_QUESTION_ANSWER } from '../actions/questions'
 
+/**
+ * @param {object} state - current state
+ * @param {object} action - action object
+ */
 export default function users (state = {}, action) {
   switch (action.type) {
     case RECEIVE_USERS:

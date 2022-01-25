@@ -15,10 +15,16 @@ export function getInitialData () {
   }))
 }
 
+/**
+ * @param {object} - question data
+ */
 export function saveQuestion (data) {
   return _saveQuestion(data)
 }
 
+/**
+ * @param {object} - question answer data
+ */
 export function saveQuestionAnswer (data) {
   return _saveQuestionAnswer(data)
 }

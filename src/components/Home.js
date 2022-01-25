@@ -1,3 +1,7 @@
+/**
+ * @file Home component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -30,14 +34,27 @@ class Home extends Component {
   }
 }
 
+/**
+ * @param {object} state - Redux state
+ * @param {string} state.authedUser - authenticated user id
+ * @param {object} state.questions - question objects
+ * @param {object} state.users - user objects
+ */
 function mapStateToProps({ authedUser, questions, users }) {
   return {
+
+    // grab all answered questions ids
     answeredIds: Object.keys(users[authedUser].answers)
       .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
+
+    // grab all unanswered question ids and sort by newest first
     unansweredIds: Object.keys(questions)
       .filter(id => !Object.keys(users[authedUser].answers).includes(id))
       .sort((a,b) => questions[b].timestamp - questions[a].timestamp),
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(Home)

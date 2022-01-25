@@ -1,3 +1,7 @@
+/**
+ * @file LeaderboardCard component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Image from './Image'
@@ -33,8 +37,13 @@ class LeaderboardCard extends Component {
   }
 }
 
-function mapStateToProps({ users }, props) {
-  const { id } = props
+/**
+ * @param {object} state - Redux state
+ * @param {object} state.users - user objects
+ * @param {object} props - props passed in to the component
+ * @param {number} props.id - user id
+ */
+function mapStateToProps({ users }, { id }) {
   const user = users[id]
 
   return {
@@ -42,4 +51,7 @@ function mapStateToProps({ users }, props) {
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(LeaderboardCard)

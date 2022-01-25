@@ -1,7 +1,16 @@
+/**
+ * @file Result component
+ */
+
 import React from 'react'
 
-export default function Result (props) {
-  const { option, totalVotes, selected } = props
+/**
+ * @param {object} props - props passed into the component
+ * @param {string} props.option - question text
+ * @param {number} props.totalVotes - total votes for question
+ * @param {boolean} props.selected - true if authenticated user has selected question
+ */
+export default function Result ({ option, totalVotes, selected }) {
   const votes = option.votes.length
   const percentage = (votes / totalVotes * 100).toFixed(1)
 

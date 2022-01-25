@@ -1,4 +1,8 @@
-import React, { Component } from 'react'
+/**
+ * @file Header component
+ */
+
+import React from 'react'
 import Nav from './Nav'
 import UserMenu from './UserMenu'
 

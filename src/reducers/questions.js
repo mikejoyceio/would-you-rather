@@ -1,5 +1,13 @@
+/**
+ * @file questions reducer
+ */
+
 import { RECEIVE_QUESTIONS, ADD_QUESTION, ADD_QUESTION_ANSWER } from '../actions/questions'
 
+/**
+ * @param {object} state - current state
+ * @param {object} action - action object
+ */
 export default function questions (state = {}, action) {
   switch (action.type) {
     case RECEIVE_QUESTIONS:

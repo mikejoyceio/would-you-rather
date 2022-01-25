@@ -1,3 +1,7 @@
+/**
+ * @file App component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import LoadingBar from 'react-redux-loading-bar'
@@ -37,10 +41,16 @@ class App extends Component {
   }
 }
 
+/**
+ * @param {string} authedUser - authenticated user id
+ */
 function mapStateToProps({ authedUser }) {
   return {
     authedUser
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(App)

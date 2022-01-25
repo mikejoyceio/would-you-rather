@@ -1,3 +1,7 @@
+/**
+ * @file NewQuestion component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestion } from '../actions/questions'
@@ -81,4 +85,7 @@ class NewQuestion extends Component {
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect()(NewQuestion)

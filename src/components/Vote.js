@@ -1,3 +1,7 @@
+/**
+ * @file Vote component
+ */
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleAddQuestionAnswer } from '../actions/questions'
@@ -93,8 +97,15 @@ class Vote extends Component {
   }
 }
 
-function mapStateToProps({ questions, users, authedUser }, props) {
-  const { id } = props
+/**
+ * @param {object} state - Redux state
+ * @param {object} state.questions - question objects
+ * @param {object} state.users - user objects
+ * @param {string} state.authedUser - authenticated user id
+ * @param {object} props - props passed into the component
+ * @param {number} props.id - user id
+ */
+function mapStateToProps({ questions, users, authedUser }, { id }) {
   const question = questions[id]
   const author = users[question.author]
 
@@ -106,4 +117,7 @@ function mapStateToProps({ questions, users, authedUser }, props) {
   }
 }
 
+/**
+ * @see {@link https://react-redux.js.org/api/connect}
+ */
 export default connect(mapStateToProps)(Vote)

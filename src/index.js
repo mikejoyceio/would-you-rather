@@ -8,6 +8,9 @@ import reducer from './reducers'
 import middleware from './middleware'
 import './index.scss'
 
+/**
+ * @see {@link https://redux.js.org/api/createstore}
+ */
 const store = createStore(reducer, middleware)
 
 ReactDOM.render(
