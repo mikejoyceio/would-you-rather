@@ -22,15 +22,15 @@ class App extends Component {
         <LoadingBar />
         <Header />
         <div className='container mx-auto mt-20'>
-          { this.props.authedUser === null
-            ? <Login />
-            : <Switch>
+          { this.props.authedUser !== null
+            ? <Switch>
                 <Route path='/' exact component={Home} />
                 <Route path='/add' component={NewQuestion} />
                 <Route path='/leaderboard' component={Leaderboard} />
                 <Route path='/poll/:id' component={Poll} />
                 <Route path='/404' component={NotFound} />
-              </Switch>}
+              </Switch>
+            : <Login />}
         </div>
       </>
     )
