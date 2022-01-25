@@ -23,7 +23,7 @@ class UserMenu extends Component {
                   {user.name}
                 </div>
                 <div>
-                  <Image className='w-7 rounded-full' image={user.avatar} />
+                  <Image className='w-7 rounded-full' image={user.avatar} alt={user.name} />
                 </div>
               </div>
             </li>

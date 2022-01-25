@@ -38,18 +38,19 @@ class Vote extends Component {
   render() {
     const { author, question } = this.props
     const { answer } = this.state
+    const { name, avatar } = author
     const { optionOne, optionTwo } = question
 
     return (
       <div className='grid border border-gray-200 rounded py-4 px-5'>
         <div>
           <h6 className='text-lg font-bold mb-5'>
-            {author.name} asks:
+            {name} asks:
           </h6>
         </div>
         <div className='grid grid-cols-12'>
           <div className='col-span-4'>
-            <Image className='w-20 rounded-full' image={author.avatar} />
+            <Image className='w-20 rounded-full' image={avatar} alt={name} />
           </div>
           <div className='col-span-8'>
             <p className='font-bold mb-4'>Would you rather...</p>
